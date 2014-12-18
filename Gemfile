@@ -9,6 +9,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
 gem 'devise'
+gem 'omniauth-facebook'
+gem 'figaro'
 
 group :development do
   gem 'spring'
