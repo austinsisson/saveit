@@ -8,6 +8,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'devise'
 
 group :development do
   gem 'spring'
