@@ -2,15 +2,21 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.1.0'
+
 gem 'sass-rails'
+gem 'bootstrap-sass'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder'
+gem 'html2haml'
+gem 'haml-rails'
+
+gem 'turbolinks'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'figaro'
+
 
 group :development do
   gem 'spring'

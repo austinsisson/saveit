@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title SaveIt
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    .container
+      - flash.each do |key, value|
+        %div{:class => "alert alert-#{key}"}= value
+      .navbar
+        = link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
+        = link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+      = yield
+      
