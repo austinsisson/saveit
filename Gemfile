@@ -17,6 +17,9 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'figaro'
 
+# Allows marking favorites, gem that pulls from rubygems does not work with Rails 4
+gem 'markable', :git => 'https://github.com/chrome/markable.git'
+
 
 group :development do
   gem 'spring'
