@@ -7,10 +7,24 @@
     = csrf_meta_tags
   %body
     .container
-      - flash.each do |key, value|
-        %div{:class => "alert alert-#{key}"}= value
-      .navbar
-        = link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
-        = link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+      .flash
+        - if flash[:notice]
+          .alert.alert-success
+            .button.close{:data => {:dismiss => "alert"} } 
+            = flash[:notice]
+        - elsif flash[:error]
+          .alert.alert-danger
+            .button.close{:data => {:dismiss => "alert"} } 
+            = flash[:error]
+        - elsif flash[:alert]
+          .alert.alert-warning
+            .button.close{:data => {:dismiss => "alert"} } 
+            = flash[:alert]
+
+      - if current_user
+        .navbar
+          = link_to "About", about_path, class: 'btn btn-primary'
+          = link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-primary'
+          
       = yield
       
