@@ -1,14 +1,15 @@
-ActionMailer::Base.smtp_settings = {
-  port:                587,
-  address:             'smtp.mailgun.org',
-  username:            ENV['MAILGUN_SMTP_LOGIN'],
-  password:            ENV['MAILGUN_SMPTP_PASSWORD'],
-  domain:              'app32619189.mailgun.org',
-  authentication:      :plain,
-  content_type:        'text/html'
-  }
-
-ActionMailer::Base.delivery_method = :smtp
+if Rails.env.development? || Rails.env.production?
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    port:                587,
+    address:             'smtp.mailgun.org',
+    username:            ENV['MAILGUN_SMTP_LOGIN'],
+    password:            ENV['MAILGUN_SMPTP_PASSWORD'],
+    domain:              'app32619189.mailgun.org',
+    authentication:      :plain,
+    content_type:        'text/html'
+    }
+end
 
 # Debugging
 ActionMailer::Base.raise_delivery_errors = true

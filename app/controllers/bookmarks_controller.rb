@@ -1,5 +1,7 @@
 class BookmarksController < ApplicationController
   
+  skip_before_action :verify_authenticity_token, only: [:create]
+
   def index
   end
   
@@ -10,6 +12,11 @@ class BookmarksController < ApplicationController
   end
   
   def create
+    puts "INCOMING PARAMS HERE: #{params}"
+    @user = User.find(params[:user_email])
+    @bookmark = @user.bookmark.new(bookmark_params)
+    
+    
   end
   
   def edit
@@ -23,4 +30,7 @@ class BookmarksController < ApplicationController
   
   private
   
+  def bookmark_params
+    params.require(:bookmark).permit(:name, :topic)
+  end
 end
