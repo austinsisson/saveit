@@ -13,10 +13,10 @@ class BookmarksController < ApplicationController
   
   def create
     puts "INCOMING PARAMS HERE: #{params}"
-    @user = User.find(params[:user_email])
+    @user = User.find(params[:from])
     @bookmark = @user.bookmark.new(bookmark_params)
-    
-    
+    @bookmark.save
+    head 200
   end
   
   def edit
