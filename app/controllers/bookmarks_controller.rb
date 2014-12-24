@@ -14,9 +14,10 @@ class BookmarksController < ApplicationController
   def create
     puts "INCOMING PARAMS HERE: #{params}"
     @user = User.find_by_email(params[:sender])
-    params[:bookmark][:name] == params["stripped-text"]
-    params[:bookmark][:topic] == params[:subject]
-    @bookmark = @user.bookmarks.build(bookmark_params)
+    @bookmark = @user.bookmarks.build(
+      name: params["stripped-text"],
+      topic: params[:subject]
+      )
     @bookmark.save
     head 200
   end
