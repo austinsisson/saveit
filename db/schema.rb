@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220023813) do
+ActiveRecord::Schema.define(version: 20141224013525) do
 
   create_table "bookmarks", force: true do |t|
     t.integer  "user_id"
@@ -22,6 +22,18 @@ ActiveRecord::Schema.define(version: 20141220023813) do
   end
 
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id"
+
+  create_table "marks", id: false, force: true do |t|
+    t.integer  "marker_id"
+    t.string   "marker_type"
+    t.integer  "markable_id"
+    t.string   "markable_type"
+    t.string   "mark",          limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "marks", ["markable_id", "markable_type", "mark"], name: "index_marks_on_markable_id_and_markable_type_and_mark"
+  add_index "marks", ["marker_id", "marker_type", "mark"], name: "index_marks_on_marker_id_and_marker_type_and_mark"
 
   create_table "users", force: true do |t|
     t.string   "name"
