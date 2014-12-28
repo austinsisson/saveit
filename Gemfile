@@ -5,6 +5,7 @@ gem 'rails', '4.1.0'
 
 gem 'sass-rails'
 gem 'bootstrap-sass'
+gem 'font-awesome-sass'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
