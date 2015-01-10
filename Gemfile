@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'jbuilder'
 gem 'html2haml'
 gem 'haml-rails'
+gem 'link_thumbnailer'
 
 gem 'turbolinks'
 gem 'devise'

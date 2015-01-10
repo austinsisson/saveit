@@ -3,10 +3,15 @@
   = image_tag "#{@user.image}"
 .div
   - @bookmarks.each_pair do |topic, link|
-    %p
-      = topic
+    .div
+      = "##{topic}"
+    %br
     %br
     - link.each do |link|
-      = link.name
+      - site = LinkThumbnailer.generate(link.name)
+      .div
+        %h4
+          = site.title
+        = image_tag "#{site.favicon}"
     %br
     %br
