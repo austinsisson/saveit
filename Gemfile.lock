@@ -82,6 +82,8 @@ GEM
       railties (>= 4.0.1)
     hashie (3.3.2)
     hike (1.2.3)
+    holder_rails (2.4.1)
+      railties (>= 3.1.0)
     hpricot (0.8.6)
     html2haml (1.0.1)
       erubis (~> 2.7.0)
@@ -219,6 +221,7 @@ DEPENDENCIES
   figaro
   font-awesome-sass
   haml-rails
+  holder_rails
   html2haml
   jbuilder
   jquery-rails

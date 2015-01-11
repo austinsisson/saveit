@@ -1,0 +1,14 @@
+.div.bookmark-category
+  - @bookmarks.each_pair do |topic, bookmark|
+    .col-md-12.topic
+      = "##{topic}"
+    %br
+    %br
+    - bookmark.each do |link|
+      - site = LinkThumbnailer.generate(link.name)
+      .col-md-3.bookmark.text-center  
+        %h4
+          = link_to "#{site.title}", link.name, class: 'livepreview'
+          = image_tag "#{site.favicon}"
+        .thumbnail
+          = holder_tag '300x200', 'Hover over link for preview!', 'sky'

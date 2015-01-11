@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery-live-preview
+//= require holder
 //= require_tree .
+
+$(document).ready(function() { 
+  $(".livepreview").livePreview();
+});

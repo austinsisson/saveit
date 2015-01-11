@@ -13,6 +13,7 @@ gem 'jbuilder'
 gem 'html2haml'
 gem 'haml-rails'
 gem 'link_thumbnailer'
+gem 'holder_rails'
 
 gem 'turbolinks'
 gem 'devise'

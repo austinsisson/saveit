@@ -1,17 +1,4 @@
 .div.text-center
   = "Hello #{@user.name}!"
   = image_tag "#{@user.image}"
-.div
-  - @bookmarks.each_pair do |topic, link|
-    .div
-      = "##{topic}"
-    %br
-    %br
-    - link.each do |link|
-      - site = LinkThumbnailer.generate(link.name)
-      .div
-        %h4
-          = site.title
-        = image_tag "#{site.favicon}"
-    %br
-    %br
+= render partial: 'bookmarks'
