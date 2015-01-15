@@ -15,8 +15,8 @@ Licensed under GNU GENERAL PUBLIC LICENSE
              targetHeight: 800,
              viewWidth: 300,
              viewHeight: 200,
-             position: 'right',
-             positionOffset: 50,
+             position: 'left',
+             positionOffset: 0,
          };
 
          var options = $.extend(defaults, options);
@@ -60,11 +60,10 @@ Licensed under GNU GENERAL PUBLIC LICENSE
              var pos = $(this).offset();
              var width = $(this).width();
              var leftpos = pos.left + width + currentOffset;
-             if(currentPos == 'left')
-                 leftpos = pos.left - options.viewWidth - currentOffset;
              var toppos = pos.top - (options.viewHeight/2);
-             //hover on 
-             $('body').append('<div id="livepreview_dialog" class="' + currentPos + '" style="display:none; padding:0px; left: ' + leftpos + 'px; top:' + toppos + 'px; width: ' + options.viewWidth + 'px; height: ' + options.viewHeight + 'px"><div class="livepreview-container" style="overflow:hidden; width: ' + options.viewWidth + 'px; height: ' + options.viewHeight + 'px"><iframe id="livepreview_iframe" src="' + href + '" style="height:' + options.targetHeight + 'px; width:' + options.targetWidth + 'px;-moz-transform: scale('+ s + ');-moz-transform-origin: 0 0;-o-transform: scale('+ s + ');-o-transform-origin: 0 0;-webkit-transform: scale('+ s + ');-webkit-transform-origin: 0 0;"></iframe></div></div>');
+             //hover on
+             $("#holder").hide();
+             $('.thumbnail').append('<div id="livepreview_dialog" class="' + currentPos + '" style="display:none; padding:0px; width: ' + options.viewWidth + 'px; height: ' + options.viewHeight + 'px"><div class="livepreview-container" style="overflow:hidden; width: ' + options.viewWidth + 'px; height: ' + options.viewHeight + 'px"><iframe id="livepreview_iframe" src="' + href + '" style="height:' + options.targetHeight + 'px; width:' + options.targetWidth + 'px;-moz-transform: scale('+ s + ');-moz-transform-origin: 0 0;-o-transform: scale('+ s + ');-o-transform-origin: 0 0;-webkit-transform: scale('+ s + ');-webkit-transform-origin: 0 0;"></iframe></div></div>');
              $('#' + preview_id).fadeIn(100);
          };
 
@@ -89,6 +88,7 @@ Licensed under GNU GENERAL PUBLIC LICENSE
             obj.on(triggerType, null, { triggerType: triggerType, target: obj, href: href, scale: s }, showPreview);
             obj.on('mouseleave', function() {
                 $('#' + preview_id).remove();
+              $("#holder").show();
             });
 
          });

@@ -9,7 +9,11 @@
       .col-md-3.bookmark.text-center  
         %h4
           = link_to "#{site.title}", link.name, class: 'livepreview'
-          = image_tag "#{site.favicon}"
-        .thumbnail
-          = holder_tag '300x200', 'Hover over link for preview!', 'sky'
+        %p 
+          "#{site.description}"
+        = image_tag "#{site.favicon}"
         = link_to "Delete", bookmark_path, method: :destroy, class: 'btn btn-danger'
+        
+.div.preview.pull-right
+  .thumbnail
+    = holder_tag '300x200', 'Hover over link for preview!', 'sky', id: 'holder'
