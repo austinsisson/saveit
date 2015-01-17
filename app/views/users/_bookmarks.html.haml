@@ -14,6 +14,6 @@
         = image_tag "#{site.favicon}"
         = link_to "Delete", bookmark_path, method: :destroy, class: 'btn btn-danger'
         
-.div.preview.pull-right
+.col-md-offset-8
   .thumbnail
-    = holder_tag '300x200', 'Hover over link for preview!', 'sky', id: 'holder'
+    = holder_tag '300x240', 'Hover over link for preview!', 'sky', id: 'holder'

@@ -15,8 +15,6 @@ Licensed under GNU GENERAL PUBLIC LICENSE
              targetHeight: 800,
              viewWidth: 300,
              viewHeight: 200,
-             position: 'left',
-             positionOffset: 0,
          };
 
          var options = $.extend(defaults, options);
@@ -46,24 +44,15 @@ Licensed under GNU GENERAL PUBLIC LICENSE
                  event.preventDefault();
              }
 
-             var currentPos = options.position;
-              if(obj.attr("data-position"))
-                 currentPos = obj.attr("data-position");
 
-             var currentOffset = options.positionOffset;
-             if(obj.attr("data-positionOffset"))
-                 currentOffset = obj.attr("data-positionOffset");
 
              if(obj.attr("data-scale"))
                  s = obj.attr("data-scale");
 
-             var pos = $(this).offset();
-             var width = $(this).width();
-             var leftpos = pos.left + width + currentOffset;
-             var toppos = pos.top - (options.viewHeight/2);
+
              //hover on
              $("#holder").hide();
-             $('.thumbnail').append('<div id="livepreview_dialog" class="' + currentPos + '" style="display:none; padding:0px; width: ' + options.viewWidth + 'px; height: ' + options.viewHeight + 'px"><div class="livepreview-container" style="overflow:hidden; width: ' + options.viewWidth + 'px; height: ' + options.viewHeight + 'px"><iframe id="livepreview_iframe" src="' + href + '" style="height:' + options.targetHeight + 'px; width:' + options.targetWidth + 'px;-moz-transform: scale('+ s + ');-moz-transform-origin: 0 0;-o-transform: scale('+ s + ');-o-transform-origin: 0 0;-webkit-transform: scale('+ s + ');-webkit-transform-origin: 0 0;"></iframe></div></div>');
+             $('.thumbnail').prepend('<iframe id="livepreview_dialog" src="' + href + '" style="height:' + options.targetHeight + 'px; width:' + options.targetWidth + 'px;-moz-transform: scale('+ s + ');-moz-transform-origin: 0 0;-o-transform: scale('+ s + ');-o-transform-origin: 0 0;-webkit-transform: scale('+ s + ');-webkit-transform-origin: 0 0;"></iframe>');
              $('#' + preview_id).fadeIn(100);
          };
 

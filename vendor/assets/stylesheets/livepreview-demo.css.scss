@@ -2,32 +2,10 @@
 
 #livepreview_dialog
 {   
-    padding:0px;
-    height:200px;
-    width:300px;
+    right: auto;
     position:absolute;
+    overflow:hidden;
+    height: 200px;
+    width: 300px;
 }
 
-#livepreview_dialog.left:after, #livepreview_dialog.left:before {
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-}
-
-#livepreview_dialog.right:before {
-    left: 0px;
-    margin-left:-45px;
-    border: solid transparent;
-    content: " ";
-    height: 0;
-    width: 0;
-    position: absolute;
-    pointer-events: none;
-    border-right-color: #999;
-    border-width: 20px;
-    top: 50%;
-    margin-top: -20px;
-}
