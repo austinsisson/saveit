@@ -1,0 +1,7 @@
+en:
+  faker:
+    internet:
+      url: [www.bloc.io, www.foxnews.com, www.wired.com, www.slashdot.org, www.reddit.com, www.cnn.com, www.aljazeera.com, www.stackoverflow.com, www.pitchfork.com, www.rollingstone.com, www.discogs.com, www.cbc.ca, www.bbc.co.uk, www.cracked.com]
+    lorem:
+      word: [Programming, News, Music, Technology, Sports, Comedy]
+      

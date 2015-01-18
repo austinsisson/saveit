@@ -1,4 +1,5 @@
 require 'faker'
+Faker::Config.locale = :en
 
 User.destroy_all
 Bookmark.destroy_all
