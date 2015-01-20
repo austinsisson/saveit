@@ -1,7 +1,6 @@
 require 'faker'
-Faker::Config.locale = :en
 
-User.destroy_all
+#User.destroy_all
 Bookmark.destroy_all
 
 # Create Users
@@ -21,8 +20,8 @@ users = User.all
 20.times do
   Bookmark.create!(
     user:    users.sample,
-    name:    Faker::Internet.url,
-    topic:   "##{Faker::Lorem.word}",
+    name:    Faker::Internet.link,
+    topic:   "##{Faker::Lorem.topic}",
     )
 end
   
