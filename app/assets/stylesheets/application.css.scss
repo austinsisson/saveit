@@ -19,8 +19,13 @@
 .thumbnail {
   height: 250px;
   width: 310px;
-}
+}  
 
 .thumbnail img {
   position: absolute;
+}
+
+.preview-window {
+  top: 35%;
+  position: fixed;
 }

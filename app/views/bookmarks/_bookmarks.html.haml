@@ -1,7 +1,12 @@
 .col-md-8.bookmark-category
   - @bookmarks.each_pair do |topic, bookmark|
     .col-md-12.topic
+      %br
+      %br
+      %br
       = "#{topic}"
+    %br
+    %br
     %br
     - bookmark.each do |link|
       - site = LinkThumbnailer.generate('http://' << link.name)
@@ -14,7 +19,7 @@
           "#{site.description}"
         
 .col-md-offset-8.preview-window
-  %h4
-    Live Bookmark Preview
+  %h4.text-center
+    Live Preview
   .thumbnail
     = holder_tag '300x240', 'Hover over link for preview!', 'sky', id: 'holder'
