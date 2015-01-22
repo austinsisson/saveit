@@ -14,13 +14,12 @@ class BookmarksController < ApplicationController
   end
   
   def create
-    puts "INCOMING PARAMS HERE: #{params}"
     @user = User.find_by(email: (params[:sender]))
     @bookmark = @user.bookmarks.build(
-      name: params["stripped-text"],
+      url: params["stripped-text"],
       topic: params[:subject]
       )
-    site = linkThumbnailer.generate(params[:name])
+    site = LinkThumbnailer.generate(@bookmark.url)
     @bookmark.update(
       title: site.title,
       description: site.description,

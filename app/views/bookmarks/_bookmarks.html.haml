@@ -5,18 +5,17 @@
       %br
       %br
       = "#{topic}"
-    %br
-    %br
-    %br
+      %br
+      %br
+      %br
     - bookmark.each do |link|
-      - site = LinkThumbnailer.generate('http://' << link.name)
-      - link_path = 'http://' << link.name
+      - link_path = 'http://' << link.url
       .col-md-6.bookmark.text-center
         %h4
-          = link_to "#{site.title}", link_path, class: 'livepreview'
-          = default_favicon(site)
+          = link_to "#{link.title}", link_path, class: 'livepreview'
+          = default_favicon(link)
         %p 
-          "#{site.description}"
+          "#{link.description}"
         
 .col-md-offset-8.preview-window
   %h4.text-center

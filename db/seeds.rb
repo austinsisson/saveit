@@ -18,10 +18,17 @@ users = User.all
 
 # Create Bookmarks
 20.times do
-  Bookmark.create!(
+  bookmark = Bookmark.create!(
     user:    users.sample,
-    name:    Faker::Internet.link,
+    url:    Faker::Internet.link,
     topic:   "##{Faker::Lorem.topic}",
     )
+  site = LinkThumbnailer.generate('http://' << bookmark.url)
+  bookmark.update(
+    title:       site.title,
+    description: site.description,
+    favicon:     site.favicon,
+    )
+  bookmark.save
 end
   
