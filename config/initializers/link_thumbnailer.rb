@@ -31,7 +31,7 @@ LinkThumbnailer.configure do |config|
 
   # List of attributes you want LinkThumbnailer to fetch on a website.
   #
-  # config.attributes = [:title, :images, :description, :videos, :favicon]
+  config.attributes = [:title, :description, :favicon]
 
   # List of procedures used to rate the website description. Add you custom class
   # here. Note that the order matter to compute the score. See wiki for more details
@@ -67,5 +67,5 @@ LinkThumbnailer.configure do |config|
   # Setting this value to false will increase performance since for each images, LinkThumbnailer
   # does not have to fetch its size and type.
   #
-  # config.image_stats = true
+  config.image_stats = false
 end

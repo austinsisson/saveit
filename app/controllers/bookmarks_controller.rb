@@ -15,10 +15,16 @@ class BookmarksController < ApplicationController
   
   def create
     puts "INCOMING PARAMS HERE: #{params}"
-    @user = User.find_by_email(params[:sender])
+    @user = User.find_by(email: (params[:sender]))
     @bookmark = @user.bookmarks.build(
       name: params["stripped-text"],
       topic: params[:subject]
+      )
+    site = linkThumbnailer.generate(params[:name])
+    @bookmark.update(
+      title: site.title,
+      description: site.description,
+      favicon: site.favicon,
       )
     @bookmark.save
     head 200
@@ -36,6 +42,6 @@ class BookmarksController < ApplicationController
   private
   
   def bookmark_params
-    params.require(:bookmark).permit(:name, :topic)
+    params.require(:bookmark).permit(:name, :topic, :title, :description, :favicon)
   end
 end

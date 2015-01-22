@@ -20,6 +20,7 @@ gem 'turbolinks'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'figaro'
+gem 'pundit'
 
 gem 'faker'
 
