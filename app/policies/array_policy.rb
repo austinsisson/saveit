@@ -1,0 +1,2 @@
+class ArrayPolicy < ApplicationPolicy
+end

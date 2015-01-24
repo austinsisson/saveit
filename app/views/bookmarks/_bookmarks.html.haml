@@ -1,5 +1,5 @@
 .col-md-8.bookmark-category
-  - @bookmarks.each_pair do |topic, bookmark|
+  - @bookmarks.each_pair do |topic, bookmarks|
     .col-md-12.topic
       %br
       %br
@@ -8,14 +8,16 @@
       %br
       %br
       %br
-    - bookmark.each do |link|
-      - link_path = 'http://' << link.url
+    - bookmarks.each do |bookmark|
+      - bookmark_path = 'http://' << bookmark.url
       .col-md-6.bookmark.text-center
         %h4
-          = link_to "#{link.title}", link_path, class: 'livepreview'
-          = default_favicon(link)
+          = link_to "#{bookmark.title}", bookmark_path, class: 'livepreview'
+          = default_favicon(bookmark)
         %p 
-          "#{link.description}"
+          "#{bookmark.description}"
+        - if policy(bookmark).destroy?
+          = link_to "Delete", bookmark, method: :destroy, class: 'btn btn-danger'
         
 .col-md-offset-8.preview-window
   %h4.text-center

@@ -5,6 +5,7 @@ class BookmarksController < ApplicationController
   def index
     bookmarks = Bookmark.all
     @bookmarks = bookmarks.group_by(&:topic)
+    authorize @bookmarks
   end
   
   def show
@@ -14,19 +15,11 @@ class BookmarksController < ApplicationController
   end
   
   def create
-    @user = User.find_by(email: (params[:sender]))
-    @bookmark = @user.bookmarks.build(
-      url: params["stripped-text"],
-      topic: params[:subject]
-      )
-    site = LinkThumbnailer.generate(@bookmark.url)
-    @bookmark.update(
-      title: site.title,
-      description: site.description,
-      favicon: site.favicon,
-      )
-    @bookmark.save
-    head 200
+    if CreateBookmark.call(params)
+      head 200
+    else
+      head 500
+    end
   end
   
   def edit
@@ -41,6 +34,6 @@ class BookmarksController < ApplicationController
   private
   
   def bookmark_params
-    params.require(:bookmark).permit(:name, :topic, :title, :description, :favicon)
+    params.require(:bookmark).permit(:url, :topic, :title, :description, :favicon)
   end
 end
