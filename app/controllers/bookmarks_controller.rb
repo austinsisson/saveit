@@ -13,12 +13,8 @@ class BookmarksController < ApplicationController
   end
   
   def create
-    if CreateBookmark.call(params)
-      head 200
-    else
-      head 500
-      CreateFailure.call(params)
-    end
+    CreateBookmark.call(params)
+    CreateFailure.call(params) if head 500
   end
   
   
