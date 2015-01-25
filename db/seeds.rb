@@ -1,6 +1,6 @@
 require 'faker'
 
-#User.destroy_all
+User.destroy_all
 Bookmark.destroy_all
 
 # Create Users

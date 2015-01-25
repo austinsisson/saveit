@@ -2,8 +2,9 @@ class CreateBookmark
   
   def self.call(params)
     user = User.find_by(email: (params[:sender]))
-    bookmark = user.bookmarks.build(
-      url: params["stripped-text"],
+    bookmark = Bookmark.build(
+      user:  user,
+      url:   params["stripped-text"],
       topic: params[:subject]
       )
     site = LinkThumbnailer.generate(bookmark.url)
