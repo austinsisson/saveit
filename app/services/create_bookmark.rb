@@ -2,7 +2,7 @@ class CreateBookmark
   
   def self.call(params)
     user = User.find_by(email: (params[:sender]))
-    bookmark = Bookmark.build(
+    bookmark = Bookmark.create!(
       user:  user,
       url:   params["stripped-text"],
       topic: params[:subject]
