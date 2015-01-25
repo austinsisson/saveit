@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
   
   resources :users
-  resources :bookmarks
+  resources :bookmarks do
+    member do
+      post :like
+      post :unlike
+    end
+  end
   
   get 'welcome/index'
 

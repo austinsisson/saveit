@@ -8,12 +8,6 @@ class BookmarksController < ApplicationController
     authorize @bookmarks
   end
   
-  def show
-  end
-  
-  def new
-  end
-  
   def create
     if CreateBookmark.call(params)
       head 200
@@ -22,11 +16,6 @@ class BookmarksController < ApplicationController
     end
   end
   
-  def edit
-  end
-  
-  def update
-  end
   
   def destroy
     @bookmark = Bookmark.find(params[:id])
@@ -39,6 +28,22 @@ class BookmarksController < ApplicationController
     
     redirect_to user_path
   end
+  
+    
+  def like
+    @user = current_user
+    @bookmark = Bookmark.find(params[:id])
+    @user.set_mark :liked, @bookmark
+    redirect_to bookmarks_path
+  end
+  
+  def unlike
+    @user = current_user
+    @bookmark = Bookmark.find(params[:id])
+    @user.remove_mark :liked, @bookmark
+    redirect_to user_path
+  end
+  
   
   private
   

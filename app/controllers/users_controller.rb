@@ -4,5 +4,6 @@ class UsersController < ApplicationController
     @user = current_user
     bookmarks = @user.bookmarks.all
     @bookmarks = bookmarks.group_by(&:topic)
+    @liked = @user.liked_bookmarks.group_by(&:topic)
   end
 end
