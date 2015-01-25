@@ -21,8 +21,9 @@
         - if policy(bookmark).destroy?
           = link_to "Delete", bookmark_path(bookmark), method: :delete, class: 'btn btn-danger'
         
-.col-md-offset-6.preview-window
-  %h4.text-center
-    Live Preview
-  .thumbnail
-    = holder_tag '300x240', 'Hover over link for preview!', 'sky', id: 'holder'
+.col-md-4
+  .preview-window
+    %h4.text-center
+      Live Preview
+    .thumbnail
+      = holder_tag '300x240', 'Hover over link for preview!', 'sky', id: 'holder'

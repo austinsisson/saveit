@@ -8,10 +8,9 @@
       %br
       %br
     - bookmarks.each do |bookmark|
-      - fixed_bookmark_path = 'http://' << bookmark.url
       .col-md-6.bookmark.text-center
         %h4
-          = link_to "#{bookmark.title}", fixed_bookmark_path, class: 'livepreview'
+          = link_to "#{bookmark.title}", url_fixer(bookmark.url), class: 'livepreview'
           = default_favicon(bookmark)
         %p 
           "#{bookmark.description}"
