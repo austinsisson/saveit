@@ -1,0 +1,13 @@
+- @bookmarks.each do |bookmark|
+  - fixed_bookmark_path = 'http://' << bookmark.url
+  .col-md-6.bookmark.text-center
+    %h4
+      = link_to "#{bookmark.title}", fixed_bookmark_path, class: 'livepreview'
+      = default_favicon(bookmark)
+    %p 
+      "#{bookmark.description}"
+      - if bookmark.user != current_user
+        = link_to like_bookmark_path(bookmark), method: :post, class: 'btn btn-default' do
+          %i.fa.fa-heart
+      - if policy(bookmark).destroy?
+        = link_to "Delete", bookmark_path(bookmark), method: :delete, class: 'btn btn-danger'

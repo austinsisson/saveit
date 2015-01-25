@@ -8,6 +8,10 @@ class BookmarksController < ApplicationController
     authorize @bookmarks
   end
   
+  def show
+    @bookmarks = Bookmark.where(topic: params[:id])
+  end
+  
   def create
     if CreateBookmark.call(params)
       head 200
