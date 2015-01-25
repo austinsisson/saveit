@@ -17,6 +17,7 @@ class BookmarksController < ApplicationController
       head 200
     else
       head 500
+      CreateFailure.call(params)
     end
   end
   
