@@ -7,20 +7,21 @@ class CreateBookmark
       url:   params["stripped-text"],
       topic: params[:subject]
       )
-    site = LinkThumbnailer.generate(bookmark.url)
-    bookmark.update(
-      title: site.title,
-      description: site.description,
-      favicon: site.favicon
-      )
-    if LinkThumbnailer::BadUriFormat
-      create_failure
-    else
+    begin
+      site = LinkThumbnailer.generate(bookmark.url)
+      bookmark.update(
+        title: site.title,
+        description: site.description,
+        favicon: site.favicon
+        )
       bookmark.save
+    rescue LinkThumbnailer::BadUriFormat
+      bookmark.destroy
+      create_failure
     end
   end
   
-  def create_failure
+  def create_failure(params)
     RestClient.post 'https://api:"#{MAILGUN_API_KEY}"@api.mailgun.net/V2/app32619189.mailgun.org/messages',
     from:     "Admin <admin@saveit.com>",
     to:       params[:sender],
