@@ -17,11 +17,7 @@ class CreateBookmark
       bookmark.save
     rescue LinkThumbnailer::BadUriFormat
       bookmark.destroy
-      creation_failure(params)
+      UserMailer.bookmark_creation_failure(params).deliver
     end
-  end
-  
-  def self.creation_failure(params)
-    UserMailer.bookmark_creation_failure(params).deliver
   end
 end
