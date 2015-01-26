@@ -21,7 +21,7 @@ class CreateBookmark
     end
   end
   
-  def creation_failure(params)
+  def self.creation_failure(params)
     UserMailer.bookmark_creation_failure(params).deliver
   end
 end
