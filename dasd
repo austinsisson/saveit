@@ -1,0 +1,54 @@
+[33m82b0503[m HEAD@{0}: checkout: moving from partial-views to master
+[33m82b0503[m HEAD@{1}: checkout: moving from master to partial-views
+[33m82b0503[m HEAD@{2}: checkout: moving from partial-views to master
+[33m82b0503[m HEAD@{3}: checkout: moving from master to partial-views
+[33m82b0503[m HEAD@{4}: commit: updated views
+[33m1544abb[m HEAD@{5}: commit: testing create bookmark fail
+[33m7f7afa4[m HEAD@{6}: commit: pulled http append from view to helper, updated bookmarks controller
+[33m87af172[m HEAD@{7}: commit: fixed createbookmark
+[33ma6e6aa7[m HEAD@{8}: commit: added if-any liked for users, updated CreateBookmark
+[33m23f8bdf[m HEAD@{9}: commit: added bookmark creation failed mailer
+[33ma84d35f[m HEAD@{10}: commit: added view by topic
+[33mb972f22[m HEAD@{11}: commit: added the ability to like/unlike bookmarks
+[33mdae911e[m HEAD@{12}: commit: added bookmark deletion
+[33m032b0ea[m HEAD@{13}: commit: added service call for bookmark create action, added policies for bookmark deletion
+[33m08cdc00[m HEAD@{14}: commit: removed LinkThumbnailer logic from views, updated bookmarks columns in database
+[33mc1d324d[m HEAD@{15}: commit: added helper method for default favicons
+[33m9e7484e[m HEAD@{16}: commit: set live preview to be static
+[33m007de0c[m HEAD@{17}: commit: modified faker data to include custom websites, updated layout to test new objects
+[33m32bbf98[m HEAD@{18}: commit: cleaned up partials, modified bootstrap to include bootswatch
+[33m2991f40[m HEAD@{19}: commit: fixed live preview
+[33m1b4e97e[m HEAD@{20}: commit: updated layout, pushed preview window to single universal preview frame
+[33m65aa446[m HEAD@{21}: commit: updated bookmarks layout, added live preview of urls, added bookmarks view to a helper
+[33m8886ab5[m HEAD@{22}: commit: added site previews, need to edit layout
+[33me4ffcea[m HEAD@{23}: commit: updated sorting of user bookmarks, added facebook image to user view
+[33m4e91769[m HEAD@{24}: commit: added bootstrap-social, font-awesome, facebook login buttons
+[33m9ab5e33[m HEAD@{25}: commit: verified incoming emails are being converted to bookmarks, added basic bookmarks index view, seeds file"
+[33m56605ea[m HEAD@{26}: commit: still testing
+[33m3971f6c[m HEAD@{27}: commit: .
+[33m6aff9bf[m HEAD@{28}: commit: working on processing incoming mail
+[33mcedb664[m HEAD@{29}: commit: updating
+[33m2ac8595[m HEAD@{30}: commit: updating incoming create method
+[33m85075d1[m HEAD@{31}: commit: updated incoming bookmark create
+[33mfcb7a76[m HEAD@{32}: commit: fixed typos preventing mailgun from working
+[33mc2bd35e[m HEAD@{33}: commit: fixing mailing on production
+[33m38bad60[m HEAD@{34}: commit: fixing secrets
+[33mc504161[m HEAD@{35}: commit: working on mailgun
+[33m8a81494[m HEAD@{36}: commit: implemented mailgun and framework for incoming mail
+[33mdaa81e6[m HEAD@{37}: commit: .
+[33m5539945[m HEAD@{38}: commit: trying to fix devise on production
+[33m1049705[m HEAD@{39}: commit: added devise key
+[33m748d759[m HEAD@{40}: commit: getting devise to work on production
+[33m1c47f57[m HEAD@{41}: merge layout: Fast-forward
+[33m5d850c3[m HEAD@{42}: checkout: moving from layout to master
+[33m1c47f57[m HEAD@{43}: commit: updated layout
+[33m5d850c3[m HEAD@{44}: checkout: moving from master to layout
+[33m5d850c3[m HEAD@{45}: commit: added bookmarks controller, model, and markable gem
+[33ma6c1bdc[m HEAD@{46}: checkout: moving from bookmarks to master
+[33ma6c1bdc[m HEAD@{47}: checkout: moving from master to bookmarks
+[33ma6c1bdc[m HEAD@{48}: commit: converted views to haml, added sign in/sign out links
+[33m280d2ce[m HEAD@{49}: commit: added facebook authentication
+[33m4f983da[m HEAD@{50}: commit: added devise, prepping for facebook authentication
+[33m29e3d06[m HEAD@{51}: commit: updated gemfile
+[33m9e17a66[m HEAD@{52}: commit: test
+[33me6b5e13[m HEAD@{53}: commit (initial): first commit

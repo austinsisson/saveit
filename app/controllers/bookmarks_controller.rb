@@ -14,8 +14,6 @@ class BookmarksController < ApplicationController
   
   def create
     CreateBookmark.call(params)
-    # This service object needs to be called if there is an error creating the bookmark
-    # CreateFailure.call(params)
   end
   
   
