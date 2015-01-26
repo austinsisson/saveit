@@ -21,7 +21,7 @@ users = User.all
   bookmark = Bookmark.create!(
     user:    users.sample,
     url:    Faker::Internet.link,
-    topic:   "##{Faker::Lorem.topic}",
+    topic:   "#{Faker::Lorem.topic}",
     )
   site = LinkThumbnailer.generate('http://' << bookmark.url)
   bookmark.update(
