@@ -1,6 +1,14 @@
-.div.text-center.user-greeting
+.col-md-4.col-md-offset-2.text-center.user-greeting
   = "Hello #{@user.name}!"
   = image_tag "#{@user.image}"
+  %h3 Instructions:
+  %p
+    To create a new bookmark, send an email
+    = mail_to "bookmarks@app32619189.mailgun.org", "here."
+    For the subject line, type the topic of the bookmark.
+    For the body of the email, type the full address of the website.
+  %br
 = render partial: 'bookmarks/bookmarks'
+= render partial: 'bookmarks/preview'
 - if @liked.any?
   = render partial: 'liked'
