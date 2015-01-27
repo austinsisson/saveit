@@ -9,9 +9,8 @@ class CreateBookmark
       )
     begin
       site = LinkThumbnailer.generate(bookmark.url)
-    rescue LinkThumbnailer::BadUriFormat
+    rescue LinkThumbnailer::BadUriFormat || URI::InvalidURIError
       UserMailer.bookmark_creation_failure(params).deliver
-      redirect_to bookmarks_path
       false
     else
       bookmark.update(
