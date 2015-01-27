@@ -7,10 +7,18 @@
 @import "livepreview-demo";
 
 body { 
-  padding-top: 65px; 
+  padding-top: 100px; 
+}
+
+.navbar {
+  width: 50%;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
 }
 
 .navbar-nav {
+  display: inline-block;
   text-align: center;
   width: 100%;
 }
