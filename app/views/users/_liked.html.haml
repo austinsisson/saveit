@@ -7,14 +7,4 @@
       %br
       %br
       %br
-    - bookmarks.each do |bookmark|
-      .col-md-6.bookmark.text-center
-        %h4
-          = link_to "#{bookmark.title}", url_fixer(bookmark.url), class: 'livepreview'
-          = default_favicon(bookmark)
-        %p 
-          "#{bookmark.description}"
-        = link_to unlike_bookmark_path(bookmark), method: :post, class: 'btn btn-default' do
-          %i.fa.fa-heart-o
-        - if policy(bookmark).destroy?
-          = link_to "Delete", bookmark_path(bookmark), method: :delete, class: 'btn btn-danger'
+      = render partial: 'bookmarks/bookmark', locals: {bookmarks: bookmarks}

@@ -13,8 +13,9 @@ class BookmarksController < ApplicationController
   end
   
   def create
-    CreateBookmark.call(params)
-    redirect_to bookmarks_path
+    if CreateBookmark.call(params)
+      redirect_to bookmarks_path
+    end
   end
   
   

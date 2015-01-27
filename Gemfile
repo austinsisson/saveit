@@ -17,6 +17,7 @@ gem 'link_thumbnailer'
 gem 'holder_rails'
 
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'figaro'
