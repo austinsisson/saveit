@@ -8,7 +8,7 @@ class CreateBookmark
       topic: params[:subject]
       )
     begin
-      site = LinkThumbnailer.generate(bookmark.url)
+      site = LinkThumbnailer.generate(url_fixer(bookmark.url))
     rescue LinkThumbnailer::BadUriFormat
       UserMailer.bookmark_creation_failure(params).deliver
     else
