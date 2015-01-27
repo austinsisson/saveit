@@ -1,7 +1,7 @@
-.liked-bookmarks
+.col-md-8.liked-bookmarks
+  %h4 Liked Bookmarks
   - @liked.each_pair do |topic, bookmarks|
     .col-md-12.topic
-      %h4 Liked Bookmarks
       %br
       = link_to "#{topic}", bookmark_path(topic), class: 'btn btn-default'
       %br

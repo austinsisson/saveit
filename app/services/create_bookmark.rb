@@ -9,15 +9,16 @@ class CreateBookmark
       )
     begin
       site = LinkThumbnailer.generate(bookmark.url)
+    rescue LinkThumbnailer::BadUriFormat
+      bookmark.destroy
+      UserMailer.bookmark_creation_failure(params).deliver
+    else
       bookmark.update(
         title: site.title,
         description: site.description,
         favicon: site.favicon
         )
       bookmark.save
-    rescue LinkThumbnailer::BadUriFormat
-      bookmark.destroy
-      UserMailer.bookmark_creation_failure(params).deliver
     end
   end
 end
