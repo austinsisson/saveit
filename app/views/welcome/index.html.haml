@@ -1,7 +1,60 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.erb
-
-= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
-= link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-social btn-md btn-facebook' do
-      %i.fa.fa-facebook
-      Sign in with Facebook
+.container-full
+  .row
+    .col-lg-12.text-center.v-center
+      %h1.title Welcome to SaveIt!
+      %p.lead a social bookmarking site
+      %br/
+      = link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
+      = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-social btn-md btn-facebook' do
+        %i.fa.fa-facebook
+        Sign in with Facebook
+  / /row
+  .row
+    .col-lg-12.text-center.v-center{:style => "font-size:39pt;"}
+      %a{:href => "#"}
+        %i.icon-google-plus
+      %a{:href => "#"}
+        %i.icon-facebook
+      %a{:href => "#"}
+        %i.icon-twitter
+      %a{:href => "#"}
+        %i.icon-github
+      %a{:href => "#"}
+        %i.icon-pinterest
+  %br/
+  %br/
+  %br/
+  %br/
+  %br/
+/ /container full
+.container
+  %hr/
+  .row
+    .col-md-4
+      .panel.panel-default
+        .panel-heading
+          %h3.text-center Share!
+        .panel-body
+          SaveIt makes it easy to share your bookmarks with others! SaveIt lets users email bookmarks to the site which are           automatically categorized by topic. Users can like and unlike bookmarks that are shared by others!
+    .col-md-4
+      .panel.panel-default
+        .panel-heading
+          %h3.text-center Preview!
+        .panel-body
+          SaveIt features a live preview window embedded into the site! See links without ever having to leave the page!
+    .col-md-4
+      .panel.panel-default
+        .panel-heading
+          %h3.text-center Auto-magic!
+        .panel-body
+          As soon as SaveIt receives an email from a user, it automatically pulls information from the each link. A title,
+          icon, and description are auto-magically added to the Bookmark link. We take care of all the work for you!
+  .row
+    .col-lg-12
+      %br/
+      %br/
+      %p.pull-right
+        %a{:href => "http://www.bootply.com"} Template from Bootply
+          Created by Austin Sisson
+      %br/
+      %br/
