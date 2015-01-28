@@ -21,3 +21,6 @@
 $(document).ready(function() { 
   $(".livepreview").livePreview();
 });
+
+$ ->
+  $('.flash').delay(5000).slideUp()
