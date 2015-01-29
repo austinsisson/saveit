@@ -1,9 +1,7 @@
 class UsersController < ApplicationController
   
   def show
-    @user = current_user
-    bookmarks = @user.bookmarks.all
-    @bookmarks = bookmarks.group_by(&:topic)
-    @liked = @user.liked_bookmarks.group_by(&:topic)
+    @bookmarks = current_user.bookmarks.group_by(&:topic)
+    @liked = current_user.liked_bookmarks.group_by(&:topic)
   end
 end

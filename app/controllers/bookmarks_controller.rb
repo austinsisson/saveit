@@ -1,6 +1,7 @@
 class BookmarksController < ApplicationController
   
   skip_before_action :verify_authenticity_token, only: [:create]
+  before_action :bookmark_id, only: [:destroy, :like, :unlike]
   
   def index
     bookmarks = Bookmark.all
@@ -18,9 +19,7 @@ class BookmarksController < ApplicationController
   end
   
   
-  def destroy
-    @bookmark = Bookmark.find(params[:id])
-    
+  def destroy    
     if @bookmark.destroy
       flash[:notice] = "Bookmark deleted!"
     else
@@ -32,19 +31,20 @@ class BookmarksController < ApplicationController
   
     
   def like
-    @user = current_user
-    @bookmark = Bookmark.find(params[:id])
-    @user.set_mark :liked, @bookmark
-    redirect_to bookmarks_path
+    current_user.set_mark :liked, @bookmark
+    redirect_to :back
   end
   
   def unlike
-    @user = current_user
-    @bookmark = Bookmark.find(params[:id])
-    @user.remove_mark :liked, @bookmark
-    redirect_to user_path
+    current_user.remove_mark :liked, @bookmark
+    redirect_to :back
   end
   
+  protected
+  
+  def bookmark_id
+    @bookmark = Bookmark.find(params[:id])
+  end
   
   private
   

@@ -3,29 +3,22 @@
     .col-lg-12.text-center.v-center
       %h1.title Welcome to SaveIt!
       %p.lead a social bookmarking site
-      %br/
+      %br
       = link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
+      = link_to "Sign In", user_session_path, class: 'btn btn-primary'
+      %br
+      %br
       = link_to user_omniauth_authorize_path(:facebook), class: 'btn btn-social btn-md btn-facebook' do
         %i.fa.fa-facebook
         Sign in with Facebook
   / /row
   .row
     .col-lg-12.text-center.v-center{:style => "font-size:39pt;"}
-      %a{:href => "#"}
-        %i.icon-google-plus
-      %a{:href => "#"}
-        %i.icon-facebook
-      %a{:href => "#"}
-        %i.icon-twitter
-      %a{:href => "#"}
-        %i.icon-github
-      %a{:href => "#"}
-        %i.icon-pinterest
-  %br/
-  %br/
-  %br/
-  %br/
-  %br/
+  %br
+  %br
+  %br
+  %br
+  %br
 / /container full
 .container
   %hr/
@@ -51,10 +44,9 @@
           icon, and description are auto-magically added to the Bookmark link. We take care of all the work for you!
   .row
     .col-lg-12
-      %br/
-      %br/
+      %br
+      %br
       %p.pull-right
-        %a{:href => "http://www.bootply.com"} Template from Bootply
           Created by Austin Sisson
-      %br/
-      %br/
+      %br
+      %br
